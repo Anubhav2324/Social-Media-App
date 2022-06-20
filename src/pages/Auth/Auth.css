@@ -1,0 +1,44 @@
+.Auth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 4rem;
+    position: relative;
+}
+
+.Auth>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left {
+    gap: 2rem;
+
+}
+
+.left>img {
+    width: 5rem;
+    height: 4rem;
+}
+
+.appName>h1 {
+    font-size: 3rem;
+    background-color: red;
+    /* Create a gradient */
+    background-image: var(--buttonBg);
+    /* Setting Background size and repeat properties */
+    background-size: 100%;
+    background-repeat: repeat;
+    /* Use this text as mask for the background */
+    /* This will show the gradient color rather than element bg */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+.appName>h6 {
+    font-size: 0.85rem;
+}
