@@ -3,8 +3,16 @@ import './Auth.css'
 import Logo from '../../img/logo.png'
 import SignUp from '../../components/SignUp/SignUp'
 import LogIn from '../../components/LogIn/LogIn'
+import { useState } from 'react'
 
 const Auth = () => {
+  const [isSignUp, setIsSignUp] = useState(true);
+  const toggleSignUp = () =>{
+    setIsSignUp((prev)=>{
+      return !prev
+    })
+  }
+
   return (
     <div className='Auth'>
         <div className="left">
@@ -14,8 +22,7 @@ const Auth = () => {
                 <h6>Connecting People</h6>
             </div>
         </div>
-        <SignUp />
-        {/* <LogIn /> */}
+        {isSignUp ? <SignUp authState = {toggleSignUp} /> : <LogIn authState = {toggleSignUp} />} 
     </div>
   )
 }
