@@ -47,7 +47,7 @@ const SignUp = (props) => {
                 </span>
                 <div>
                     <span style={{ fontSize: '12px', cursor: "pointer" }} onClick={() => props.authState()}>Already have an account? Login!</span>
-                    <button className='button su-button' type='submit' disabled={loading}>{ loading? "Loading..." : "Log In"}</button>
+                    <button className='button su-button' type='submit' disabled={loading}>{ loading? "Loading..." : "Sign Up"}</button>
                 </div>
             </form>
         </div>
