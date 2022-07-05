@@ -9,8 +9,8 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
     const theme = useMantineTheme();
     const { password, ...otherData } = data;
     const [formData, setFormData] = useState(otherData);
-    const [profileImage, setProfileImage] = useState(null);
-    const [coverImage, setCoverImage] = useState(null);
+    const [profilePicture, setProfilePicture] = useState(null);
+    const [coverPicture, setCoverPicture] = useState(null);
 
     const dispatch = useDispatch();
     const param = useParams();
@@ -23,31 +23,31 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
     const handleImageChange = (e) => {
         if (e.target.files && e.target.files[0]) {
             let img = e.target.files[0];
-            e.target.name === profileImage ? setProfileImage(img) : setCoverImage(img);
+            e.target.name === "profilePicture" ? setProfilePicture(img) : setCoverPicture(img);
         }
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         let userData = formData;
-        if(profileImage) {
+        if(profilePicture) {
             const data = new FormData()
-            const fileName = Date.now() + profileImage.name
+            const fileName = Date.now() + profilePicture.name
             data.append("name", fileName)
-            data.append("file", profileImage)
-            userData.profileImage = fileName;
+            data.append("file", profilePicture)
+            userData.profilePicture = fileName;
             try {
                 dispatch(uploadImage(data))
             } catch (error) {
                 console.log(error);
             }
         }
-        if(coverImage) {
+        if(coverPicture) {
             const data = new FormData()
-            const fileName = Date.now() + coverImage.name
+            const fileName = Date.now() + coverPicture.name
             data.append("name", fileName)
-            data.append("file", coverImage)
-            userData.coverImage = fileName;
+            data.append("file", coverPicture)
+            userData.coverPicture = fileName;
             try {
                 dispatch(uploadImage(data))
             } catch (error) {
@@ -65,9 +65,9 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
             overlayBlur={3}
             size='55%'
             opened={modalOpened}
-            onClose={() => { setModalOpened(false) }}
+            onClose={() => setModalOpened(false)}
         >
-            <form action="" className='infoForm'>
+            <form className='infoForm' onSubmit={handleSubmit}>
                 <h3>Your Info</h3>
                 <div>
                     <input type="text" className='infoInput' name='firstname' placeholder='First Name' onChange={handleChange} value={formData.firstname} />
@@ -84,11 +84,11 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
                 </div>
                 <div>
                     Profile Image
-                    <input type="file" name='profileImage' onChange={handleImageChange} />
+                    <input type="file" name='profilePicture' onChange={handleImageChange} />
                     Cover Image
-                    <input type="file" name='coverImage' onChange={handleImageChange} />
+                    <input type="file" name='coverPicture' onChange={handleImageChange} />
                 </div>
-                <button className='button su-button' onClick={handleSubmit}>Update</button>
+                <button className='button su-button'>Update</button>
             </form>
         </Modal>
     );
