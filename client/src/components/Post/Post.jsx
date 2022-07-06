@@ -18,7 +18,7 @@ const Post = ({data}) => {
     likePost(data._id, user._id)
     liked? setLikes((prev)=>prev - 1) : setLikes((prev)=>prev + 1)
   }
-
+  console.log(data);
   return (
     <div className='Post'>
         <img src={data.image ? process.env.REACT_APP_PUBLIC + data.image: ""} alt="" />
@@ -33,7 +33,7 @@ const Post = ({data}) => {
         <span style={{color: "var(--gray)", fontSize:"12px"}}>{likes} likes</span>
 
         <div className="detail">
-            <span><b>{data.name}</b></span>
+            <span><b>{data.firstname}</b></span>
             <span> {data.desc}</span>
         </div>
     </div>
