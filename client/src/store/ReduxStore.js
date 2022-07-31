@@ -1,10 +1,6 @@
-import {
-    legacy_createStore as createStore,
-    applyMiddleware,
-    compose,
-  } from "redux";
-  import thunk from "redux-thunk";
-  import { reducers } from "../reducers";
+import {  legacy_createStore as createStore, applyMiddleware, compose } from "redux";
+import thunk from "redux-thunk";
+import { reducers } from "../reducers";
   
   function saveToLocalStorage(store) {
     try {
