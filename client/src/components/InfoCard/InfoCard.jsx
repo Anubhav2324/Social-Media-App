@@ -17,7 +17,7 @@ const InfoCard = () => {
     const [ profileUser, setProfileUser] = useState({})
 
     const {user} = useSelector((state)=>state.authReducer.authData);
-    console.log(user);
+    console.log("Info Rendering");
 
     useEffect(()=>{
         const fetchProfileUser = async () =>{

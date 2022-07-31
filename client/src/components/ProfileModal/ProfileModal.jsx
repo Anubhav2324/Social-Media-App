@@ -6,6 +6,7 @@ import { uploadImage } from '../../actions/UploadAction';
 import { updateUser } from '../../actions/UserAction';
 
 const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
+    console.log("Modal Rendering")
     const theme = useMantineTheme();
     const { password, ...otherData } = data;
     const [formData, setFormData] = useState(otherData);
@@ -55,6 +56,7 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
             }
         }
         dispatch(updateUser(param.id, userData));
+        console.log(userData);
         setModalOpened(false);
     };
 
@@ -88,7 +90,7 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
                     Cover Image
                     <input type="file" name='coverPicture' onChange={handleImageChange} />
                 </div>
-                <button className='button su-button'>Update</button>
+                <button className='button su-button' type='submit'>Update</button>
             </form>
         </Modal>
     );
