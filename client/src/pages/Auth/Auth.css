@@ -20,12 +20,13 @@
 
 .left>img {
     width: 5rem;
-    height: 4rem;
+    height: 5rem;
 }
 
 .appName>h1 {
     font-size: 3rem;
-    background-color: red;
+    
+    background-color: #04ccfc;
     /* Create a gradient */
     background-image: var(--buttonBg);
     /* Setting Background size and repeat properties */
@@ -40,5 +41,6 @@
 }
 
 .appName>h6 {
+    color: var(--followerstext);
     font-size: 0.85rem;
 }

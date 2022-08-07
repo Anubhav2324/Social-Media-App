@@ -1,12 +1,14 @@
 import React from 'react';
 import './ProfileCard.css'
 import { useSelector } from 'react-redux';
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 
 const ProfileCard = ({location}) => {
     const {user} = useSelector((state)=>state.authReducer.authData);
     const posts = useSelector((state)=>state.postReducer.posts)
     const serverPublic = process.env.REACT_APP_PUBLIC
+    const params = useParams()
+    
 
   return (
     <div className='ProfileCard'>

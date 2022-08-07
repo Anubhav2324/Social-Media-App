@@ -1,6 +1,6 @@
 import React from 'react'
 import './Auth.css'
-import Logo from '../../img/logo.png'
+import Logo from '../../img/tweet.png'
 import SignUp from '../../components/SignUp/SignUp'
 import LogIn from '../../components/LogIn/LogIn'
 import { useState } from 'react'

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './TrendSide.css'
-import Home from '../../img/home.png'
+import Home from '../../img/image.png'
 import Noti from '../../img/noti.png'
 import Comment from '../../img/comment.png'
 import { UilSetting } from '@iconscout/react-unicons'

@@ -28,7 +28,7 @@ const LogIn = (props) => {
           <input type="text" placeholder='Username' className='infoInput' name='username' onChange={handleChange} />
         </div>
         <div>
-          <input type="text" placeholder='Password' className='infoInput' name='password' onChange={handleChange} />
+          <input type="password" placeholder='Password' className='infoInput' name='password' onChange={handleChange} />
         </div>
         <div>
           <span style={{ fontSize: '12px', cursor: "pointer" }} onClick={() => props.authState()}>Don't have an account? Signup!</span>
